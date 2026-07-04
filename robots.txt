@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://franciscogaspar.dev/sitemap.xml
+Sitemap: https://franciscofrontista.github.io/Portifolio/sitemap.xml
