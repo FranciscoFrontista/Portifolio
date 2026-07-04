@@ -1,0 +1,136 @@
+/* ============================================================
+   RESPONSIVE.CSS — Adaptações para tablet e mobile
+   Breakpoints: 1024px (tablet) / 768px (mobile grande) / 480px (mobile pequeno)
+   ============================================================ */
+
+/* ---------- TABLET (≤1024px) ---------- */
+@media (max-width: 1024px) {
+  :root {
+    --fs-3xl: 3rem;
+    --fs-2xl: 2.25rem;
+    --space-2xl: 4.5rem;
+  }
+
+  .hero__inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding-top: calc(var(--navbar-height) + var(--space-lg));
+  }
+  .hero__media { order: -1; }
+  .hero__photo-wrap { width: 240px; }
+  .hero__actions, .hero__socials { justify-content: center; }
+  .hero__summary { margin-left: auto; margin-right: auto; }
+
+  .about,
+  .contact {
+    grid-template-columns: 1fr;
+  }
+
+  .stats__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg) var(--space-md);
+  }
+}
+
+/* ---------- MOBILE GRANDE (≤768px) ---------- */
+@media (max-width: 768px) {
+  :root {
+    --fs-3xl: 2.4rem;
+    --fs-2xl: 1.9rem;
+    --fs-xl: 1.6rem;
+    --space-2xl: 3.5rem;
+    --space-xl: 2.5rem;
+  }
+
+  .section { padding: var(--space-xl) var(--space-sm); }
+
+  /* ----- Navbar / menu mobile ----- */
+  .navbar__burger { display: flex; }
+
+  .navbar__links {
+    position: fixed;
+    top: var(--navbar-height);
+    left: 0;
+    right: 0;
+    height: calc(100vh - var(--navbar-height));
+    height: calc(100dvh - var(--navbar-height));
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-lg);
+    background: var(--bg-primary);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(100%);
+    transition: transform var(--transition-base), opacity var(--transition-base), visibility 0s linear var(--transition-base);
+    z-index: 450;
+  }
+  .navbar__links.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    transition: transform var(--transition-base), opacity var(--transition-base);
+  }
+
+  .navbar__link { font-size: var(--fs-lg); }
+
+  /* Hambúrguer transforma-se em X quando aberto */
+  .navbar__burger.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .navbar__burger.is-open span:nth-child(2) { opacity: 0; }
+  .navbar__burger.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* ----- Hero ----- */
+  .hero__actions { flex-direction: column; width: 100%; }
+  .hero__actions .btn { width: 100%; justify-content: center; }
+
+  /* ----- Tecnologias ----- */
+  .tech-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* ----- Projetos / Serviços ----- */
+  .projects-grid,
+  .services-grid { grid-template-columns: 1fr; }
+
+  /* ----- Processo / GitHub ----- */
+  .process-grid { grid-template-columns: 1fr; }
+  .github-stats { grid-template-columns: 1fr; }
+
+  /* ----- Estatísticas ----- */
+  .stats__grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* ----- Footer ----- */
+  .footer__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer__links, .footer__socials { justify-content: center; }
+
+  /* ----- Status bar: simplifica em ecrãs pequenos ----- */
+  .statusbar__status { display: none; }
+}
+
+/* ---------- MOBILE PEQUENO (≤480px) ---------- */
+@media (max-width: 480px) {
+  :root {
+    --fs-3xl: 2rem;
+    --fs-2xl: 1.6rem;
+    --fs-lg: 1.25rem;
+  }
+
+  .hero__photo-wrap { width: 190px; }
+
+  .tech-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-xs); }
+  .tech-card { padding: var(--space-sm) var(--space-xs); }
+
+  .stats__grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-md) var(--space-sm); }
+  .stats__number { font-size: var(--fs-xl); }
+
+  .statusbar { font-size: 0.65rem; gap: var(--space-xs); padding: 0 var(--space-sm); }
+  .statusbar__top span { display: none; }
+
+  .navbar__logo { font-size: var(--fs-sm); }
+}
+
+/* ---------- Telas muito largas: trava o crescimento do hero ---------- */
+@media (min-width: 1440px) {
+  .hero__inner { padding-top: calc(var(--navbar-height) + var(--space-2xl)); }
+}

@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO básico ===== -->
+  <title>Francisco Gaspar — Desenvolvedor Front-End & UI/UX Designer</title>
+  <meta name="description" content="Portfólio de Francisco Gaspar, Desenvolvedor Front-End e UI/UX Designer. Veja projetos, tecnologias e serviços de desenvolvimento web.">
+  <meta name="author" content="Francisco Gaspar">
+  <meta name="keywords" content="desenvolvedor front-end, ui ux designer, portfólio, web developer, Angola, Luanda">
+
+  <!-- Open Graph (partilha em redes sociais) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Francisco Gaspar — Desenvolvedor Front-End & UI/UX Designer">
+  <meta property="og:description" content="Portfólio profissional com projetos, tecnologias e serviços.">
+  <meta property="og:image" content="assets/images/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <!-- TODO: substitui pelo domínio real quando o site estiver publicado -->
+  <meta property="og:url" content="https://franciscogaspar.dev/">
+  <meta property="og:locale" content="pt_PT">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Francisco Gaspar — Desenvolvedor Front-End & UI/UX Designer">
+  <meta name="twitter:description" content="Portfólio profissional com projetos, tecnologias e serviços.">
+  <meta name="twitter:image" content="assets/images/og-cover.jpg">
+
+  <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <!-- TODO: substitui pelo domínio real quando o site estiver publicado -->
+  <link rel="canonical" href="https://franciscogaspar.dev/">
+  <meta name="theme-color" content="#0B0E14" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#FAF9F6" media="(prefers-color-scheme: light)">
+
+  <!-- ===== Tipografia (Google Fonts) ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- ===== Folhas de estilo ===== -->
+  <link rel="stylesheet" href="Style.css">
+  <link rel="stylesheet" href="responsive.css">
+  <link rel="stylesheet" href="animations.css">
+
+  <!-- Dados estruturados (Schema.org) — ajuda motores de busca a entender quem és -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Francisco Gaspar",
+    "jobTitle": "Desenvolvedor Front-End & UI/UX Designer",
+    "url": "https://franciscogaspar.dev/",
+    "image": "https://franciscogaspar.dev/assets/images/Frank.jpg",
+    "email": "mailto:gasparito818@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Luanda",
+      "addressCountry": "AO"
+    },
+    "sameAs": [
+      "https://github.com/FranciscoFrontista"
+    ],
+    "knowsAbout": ["HTML5", "CSS3", "JavaScript", "PHP", "Laravel", "MySQL", "Git"]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Evita "flash" de tema errado: o theme.js define o tema antes da pintura -->
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem('portfolio-theme');
+      const systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+      const theme = savedTheme || (systemPrefersLight ? 'light' : 'dark');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+
+  <!-- ===================== PRELOADER ===================== -->
+  <noscript><style>.preloader { display: none !important; }</style></noscript>
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__code">
+      <span class="preloader__code-line">const dev = { name: 'Francisco Gaspar', stack: ['PHP','Laravel','JS'] };</span>
+      <span class="preloader__code-line">function buildPortfolio() { return render(components); }</span>
+      <span class="preloader__code-line">01000110 01000111 00101111 01010000 01001111 01010010 01010100</span>
+      <span class="preloader__code-line">git commit -m "a carregar interface"</span>
+      <span class="preloader__code-line">SELECT * FROM projetos WHERE status = 'pronto';</span>
+      <span class="preloader__code-line">class Developer extends Creative {}</span>
+    </div>
+
+    <div class="preloader__core">
+      <div class="preloader__frame">
+        <span class="preloader__corner preloader__corner--tl"></span>
+        <span class="preloader__corner preloader__corner--tr"></span>
+        <span class="preloader__corner preloader__corner--bl"></span>
+        <span class="preloader__corner preloader__corner--br"></span>
+      </div>
+      <div class="preloader__particles">
+        <span class="preloader__particle"></span>
+        <span class="preloader__particle"></span>
+        <span class="preloader__particle"></span>
+        <span class="preloader__particle"></span>
+        <span class="preloader__particle"></span>
+        <span class="preloader__particle"></span>
+      </div>
+      <div class="preloader__ring preloader__ring--a"></div>
+      <div class="preloader__ring preloader__ring--b"></div>
+      <div class="preloader__logo"><span class="preloader__bracket">&lt;</span>FG<span class="preloader__bracket">/&gt;</span></div>
+      <div class="preloader__scan"></div>
+    </div>
+    <div class="preloader__status">
+      <span class="preloader__label">a carregar<span class="preloader__dots"><span>.</span><span>.</span><span>.</span></span></span>
+      <div class="preloader__bar"><div class="preloader__bar-fill" id="preloaderFill"></div></div>
+    </div>
+  </div>
+
+  <!-- Link de acessibilidade: salta a navegação para quem usa teclado/leitor de ecrã -->
+  <a class="skip-link" href="#inicio">Saltar para o conteúdo principal</a>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header class="navbar" id="navbar">
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+    <nav class="navbar__inner" aria-label="Navegação principal">
+
+      <a href="#inicio" class="navbar__logo" aria-label="Página inicial">
+        <!-- Logo/monograma — substitui pelas tuas iniciais ou logo SVG -->
+        <span class="navbar__logo-bracket">&lt;</span>FG<span class="navbar__logo-bracket">/&gt;</span>
+      </a>
+
+      <ul class="navbar__links" id="navLinks">
+        <li><a href="#sobre" class="navbar__link" data-section="sobre">Sobre</a></li>
+        <li><a href="#tecnologias" class="navbar__link" data-section="tecnologias">Tecnologias</a></li>
+        <li><a href="#projetos" class="navbar__link" data-section="projetos">Projetos</a></li>
+        <li><a href="#servicos" class="navbar__link" data-section="servicos">Serviços</a></li>
+        <li><a href="#contacto" class="navbar__link" data-section="contacto">Contacto</a></li>
+      </ul>
+
+      <div class="navbar__actions">
+        <!-- Botão de tema -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema claro/escuro" aria-pressed="false">
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+          </svg>
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Menu mobile (hambúrguer) -->
+        <button class="navbar__burger" id="navBurger" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </nav>
+  </header>
+
+  <main id="inicio">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" aria-label="Apresentação">
+      <canvas class="hero__smoke" id="heroSmoke" aria-hidden="true"></canvas>
+      <div class="hero__inner">
+      <div class="hero__content">
+
+        <p class="eyebrow">// disponível para novos projetos</p>
+
+        <h1 class="hero__title">
+          Olá, sou <span class="hero__name">Francisco::Gaspar</span>
+        </h1>
+
+        <p class="hero__role">
+          <span id="typingText" aria-hidden="true"></span>
+          <span class="hero__cursor" aria-hidden="true">|</span>
+          <span class="sr-only">Desenvolvedor Front-End, UI/UX Designer</span>
+        </p>
+
+        <p class="hero__summary">
+  Desenvolvo sistemas de gestão e aplicações web que transformam problemas em
+  soluções eficientes. Com foco em código organizado, desempenho e boas
+  práticas, procuro criar software que gere valor e ofereça uma excelente
+  experiência ao utilizador.
+</p>
+        <div class="hero__actions">
+          <a href="#sobre" class="btn btn--primary">Sobre Mim</a>
+          <a href="#projetos" class="btn btn--secondary">Ver Projetos</a>
+          <a href="assets/cv/cv.pdf" class="btn btn--ghost" download>
+            Download CV
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"></path>
+            </svg>
+          </a>
+        </div>
+
+        <ul class="hero__socials" aria-label="Redes sociais">
+          <li>
+            <a href="https://github.com/FranciscoFrontista" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.5 0 12.3c0 5.43 3.44 10.03 8.21 11.66.6.12.82-.27.82-.6v-2.1c-3.34.74-4.04-1.65-4.04-1.65-.55-1.43-1.34-1.81-1.34-1.81-1.1-.77.08-.75.08-.75 1.22.09 1.86 1.28 1.86 1.28 1.07 1.87 2.8 1.33 3.49 1.02.11-.79.42-1.33.76-1.64-2.67-.31-5.47-1.38-5.47-6.13 0-1.36.47-2.46 1.25-3.33-.13-.31-.54-1.57.12-3.28 0 0 1.02-.33 3.34 1.27a11.4 11.4 0 016.08 0c2.32-1.6 3.33-1.27 3.33-1.27.67 1.71.25 2.97.13 3.28.78.87 1.24 1.97 1.24 3.33 0 4.76-2.8 5.82-5.48 6.12.43.38.81 1.13.81 2.28v3.38c0 .33.22.72.83.6C20.57 22.32 24 17.73 24 12.3 24 5.5 18.63 0 12 0z"></path></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/in/teu-usuario" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 11.01-4.13 2.07 2.07 0 01-.01 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0z"></path></svg>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:Gasparito818@gmail.com" aria-label="Email">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16v16H4z" opacity="0"></path><path d="M22 6l-10 7L2 6"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://wa.me/244930572357" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 0C5.5 0 .2 5.3.2 11.84c0 2.09.55 4.13 1.6 5.93L0 24l6.4-1.68a11.9 11.9 0 005.64 1.44h.01c6.54 0 11.84-5.3 11.84-11.84 0-3.16-1.23-6.13-3.47-8.36A11.77 11.77 0 0012.04 0zm0 21.65a9.8 9.8 0 01-5-1.36l-.36-.21-3.8 1 1.01-3.7-.23-.38a9.8 9.8 0 01-1.5-5.16c0-5.42 4.41-9.83 9.84-9.83 2.63 0 5.1 1.02 6.96 2.88a9.78 9.78 0 012.88 6.96c0 5.42-4.41 9.8-9.8 9.8zm5.4-7.34c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.91-2.19-.24-.58-.48-.5-.66-.5-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.62.71.23 1.36.2 1.87.12.57-.08 1.75-.71 2-1.4.25-.69.25-1.28.17-1.4-.07-.12-.27-.2-.57-.34z"></path></svg>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+
+      <div class="hero__media">
+        <div class="hero__photo-wrap">
+          <div class="hero__photo-card">
+            <div class="hero__photo-chrome" aria-hidden="true">
+              <span class="hero__photo-dot hero__photo-dot--a"></span>
+              <span class="hero__photo-dot hero__photo-dot--b"></span>
+              <span class="hero__photo-dot hero__photo-dot--c"></span>
+              <span class="hero__photo-filename">Francisco Gaspar</span>
+            </div>
+            <img
+              src="assets/images/Frank.jpg"
+              alt="Foto de perfil de Francisco"
+              class="hero__photo"
+              width="420"
+              height="420"
+            >
+          </div>
+          <span class="hero__photo-badge">
+            <span class="hero__photo-badge-dot" aria-hidden="true"></span>
+            Disponível
+          </span>
+        </div>
+      </div>
+      </div>
+
+      <a href="#sobre" class="scroll-hint" aria-label="Descer para a secção Sobre">
+        <span></span>
+      </a>
+    </section>
+
+  <!-- ===================== SOBRE MIM ===================== -->
+<section class="section section--textured" id="sobre" aria-labelledby="sobre-title">
+  <div class="section__header reveal">
+    <p class="eyebrow">// 01_sobre-mim</p>
+    <h2 class="section__title" id="sobre-title">Sobre Mim</h2>
+  </div>
+
+  <div class="about">
+    <div class="about__text reveal">
+      <p>
+        Francisco Dos Santos Gaspar, desenvolvedor web com cerca de dois anos de
+        experiência prática. A minha jornada na programação começou pela
+        curiosidade, pelo interesse em tecnologia e pela vontade de criar
+        soluções para problemas reais. Desde então, tenho evoluído através da
+        prática, desenvolvendo projetos e procurando aprender algo novo todos
+        os dias.
+      </p>
+
+      <p>
+        Tenho um interesse especial pelo desenvolvimento de sistemas de gestão,
+        área onde encontro os desafios que mais gosto de resolver. No back-end,
+        gosto de trabalhar com lógica, autenticação, bases de dados e
+        arquitetura de aplicações. Também valorizo código organizado,
+        desempenho, responsividade, acessibilidade e uma boa experiência para o
+        utilizador.
+      </p>
+
+      <p>
+        Acredito que a melhor forma de aprender é construindo projetos reais.
+        Sempre que encontro um problema, procuro primeiro compreender a sua
+        origem, pesquisar diferentes soluções e implementar a abordagem mais
+        eficiente. Atualmente procuro oportunidades para crescer
+        profissionalmente, colaborar em projetos desafiantes e continuar a
+        evoluir como desenvolvedor.
+      </p>
+    </div>
+
+    <ul class="about__highlights reveal">
+      <li>
+        <span class="about__highlight-number">01</span>
+        <div>
+          <h3>Persistência</h3>
+          <p>
+            Encaro cada desafio como uma oportunidade de aprendizagem.
+            Independentemente da dificuldade, procuro compreender o problema e
+            encontrar a solução mais eficiente.
+          </p>
+        </div>
+      </li>
+
+      <li>
+        <span class="about__highlight-number">02</span>
+        <div>
+          <h3>Aprendizagem Contínua</h3>
+          <p>
+            Evoluo principalmente através da prática, criando projetos,
+            estudando novas tecnologias e aperfeiçoando continuamente as minhas
+            competências.
+          </p>
+        </div>
+      </li>
+
+      <li>
+        <span class="about__highlight-number">03</span>
+        <div>
+          <h3>Foco na Qualidade</h3>
+          <p>
+            Procuro desenvolver aplicações bem estruturadas, com código limpo,
+            interfaces responsivas e soluções que entreguem valor ao utilizador.
+          </p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+    <!-- ===================== TECNOLOGIAS ===================== -->
+    <section class="section section--alt" id="tecnologias" aria-labelledby="tech-title">
+      <div class="section__header reveal">
+        <p class="eyebrow">// 02_stack</p>
+        <h2 class="section__title" id="tech-title">Tecnologias</h2>
+        <p class="section__subtitle">Ferramentas e linguagens que uso no dia a dia.</p>
+      </div>
+
+      <div class="tech-categories">
+
+        <div class="tech-category reveal">
+          <h3 class="tech-category__title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M8 21h8M12 17v4"></path></svg>
+            Front-End
+          </h3>
+          <ul class="tech-grid">
+            <li class="tech-card reveal" data-level="90">
+              <img src="assets/icons/html5.svg" alt="Logo HTML5" class="tech-card__icon" loading="lazy" width="40" height="40">
+              <h4 class="tech-card__name">HTML5</h4>
+              <div class="tech-card__bar"><span></span></div>
+              <span class="tech-card__level" aria-hidden="true">0%</span>
+            </li>
+            <li class="tech-card reveal" data-level="85">
+              <img src="assets/icons/css3.svg" alt="Logo CSS3" class="tech-card__icon" loading="lazy" width="40" height="40">
+              <h4 class="tech-card__name">CSS3</h4>
+              <div class="tech-card__bar"><span></span></div>
+              <span class="tech-card__level" aria-hidden="true">0%</span>
+            </li>
+            <li class="tech-card reveal" data-level="80">
+              <img src="assets/icons/javascript.svg" alt="Logo JavaScript" class="tech-card__icon" loading="lazy" width="40" height="40">
+              <h4 class="tech-card__name">JavaScript</h4>
+              <div class="tech-card__bar"><span></span></div>
+              <span class="tech-card__level" aria-hidden="true">0%</span>
+            </li>
+            <li class="tech-card tech-card--learning reveal" data-level="20">
+              <img src="assets/icons/react.svg" alt="Logo React" class="tech-card__icon" loading="lazy" width="40" height="40">
+              <h4 class="tech-card__name">React</h4>
+              <span class="tech-card__badge">a aprender</span>
+              <div class="tech-card__bar"><span></span></div>
+              <span class="tech-card__level" aria-hidden="true">0%</span>
+            </li>
+            <li class="tech-card reveal" data-level="40">
+              <img src="assets/icons/angular.svg" alt="Logo Angular" class="tech-card__icon" loading="lazy" width="40" height="40">
+              <h4 class="tech-card__name">Angular</h4>
+              <div class="tech-card__bar"><span></span></div>
+              <span class="tech-card__level" aria-hidden="true">0%</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="tech-category reveal">
+          <h3 class="tech-category__title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="6" rx="1.5"></rect><rect x="2" y="15" width="20" height="6" rx="1.5"></rect><path d="M6 6h.01M6 18h.01"></path></svg>
+            Back-End
+          </h3>
+          <ul class="tech-grid">
+            <li class="tech-card reveal" data-level="70">
+              <img src="assets/icons/php.svg" alt="Logo PHP" class="tech-card__icon" loading="lazy" width="40" height="40">
+              <h4 class="tech-card__name">PHP</h4>
+              <div class="tech-card__bar"><span></span></div>
+              <span class="tech-card__level" aria-hidden="true">0%</span>
+            </li>
+            <li class="tech-card reveal" data-level="65">
+              <img src="assets/icons/laravel.svg" alt="Logo Laravel" class="tech-card__icon" loading="lazy" width="40" height="40">
+              <h4 class="tech-card__name">Laravel</h4>
+              <div class="tech-card__bar"><span></span></div>
+              <span class="tech-card__level" aria-hidden="true">0%</span>
+            </li>
+            <li class="tech-card reveal" data-level="50">
+              <img src="assets/icons/java.svg" alt="Logo Java" class="tech-card__icon" loading="lazy" width="40" height="40">
+              <h4 class="tech-card__name">Java</h4>
+              <div class="tech-card__bar"><span></span></div>
+              <span class="tech-card__level" aria-hidden="true">0%</span>
+            </li>
+            <li class="tech-card tech-card--learning reveal" data-level="20">
+              <img src="assets/icons/nodejs.svg" alt="Logo Node.js" class="tech-card__icon" loading="lazy" width="40" height="40">
+              <h4 class="tech-card__name">Node.js</h4>
+              <span class="tech-card__badge">a aprender</span>
+              <div class="tech-card__bar"><span></span></div>
+              <span class="tech-card__level" aria-hidden="true">0%</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="tech-category reveal">
+          <h3 class="tech-category__title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"></ellipse><path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5"></path><path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"></path></svg>
+            Base de Dados
+          </h3>
+          <ul class="tech-grid">
+            <li class="tech-card reveal" data-level="60">
+              <img src="assets/icons/mysql.svg" alt="Logo MySQL" class="tech-card__icon" loading="lazy" width="40" height="40">
+              <h4 class="tech-card__name">MySQL</h4>
+              <div class="tech-card__bar"><span></span></div>
+              <span class="tech-card__level" aria-hidden="true">0%</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="tech-category reveal">
+          <h3 class="tech-category__title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94z"></path></svg>
+            Ferramentas
+          </h3>
+          <ul class="tech-grid">
+            <li class="tech-card reveal" data-level="80">
+              <img src="assets/icons/git.svg" alt="Logo Git" class="tech-card__icon" loading="lazy" width="40" height="40">
+              <h4 class="tech-card__name">Git</h4>
+              <div class="tech-card__bar"><span></span></div>
+              <span class="tech-card__level" aria-hidden="true">0%</span>
+            </li>
+            <li class="tech-card reveal" data-level="80">
+              <img src="assets/icons/github.svg" alt="Logo GitHub" class="tech-card__icon" loading="lazy" width="40" height="40">
+              <h4 class="tech-card__name">GitHub</h4>
+              <div class="tech-card__bar"><span></span></div>
+              <span class="tech-card__level" aria-hidden="true">0%</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== PROJETOS ===================== -->
+    <section class="section section--textured" id="projetos" aria-labelledby="projetos-title">
+      <div class="section__header reveal">
+        <p class="eyebrow">// 03_projetos</p>
+        <h2 class="section__title" id="projetos-title">Projetos</h2>
+        <p class="section__subtitle">Uma seleção de trabalhos recentes.</p>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Ainda sem projetos publicados: cartões-modelo, prontos a substituir por
+             capturas de ecrã e links reais assim que houver trabalho para mostrar. -->
+
+        <article class="project-card project-card--placeholder reveal">
+          <div class="project-card__image-wrap project-card__image-wrap--placeholder">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M3 9h18M9 21V9"></path></svg>
+            <span>Screenshot em breve</span>
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">Sistema de Gestão <span class="project-card__slot-badge">modelo</span></h3>
+            <p class="project-card__desc">
+              Espaço reservado para um sistema de gestão real: autenticação, CRUD,
+              dashboard de dados e relatórios.
+            </p>
+            <ul class="project-card__tags">
+              <li>PHP</li><li>Laravel</li><li>MySQL</li>
+            </ul>
+            <p class="project-card__soon">🚧 Projeto a caminho — fica atento.</p>
+          </div>
+        </article>
+
+        <article class="project-card project-card--placeholder reveal">
+          <div class="project-card__image-wrap project-card__image-wrap--placeholder">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"></path></svg>
+            <span>Screenshot em breve</span>
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">Landing Page <span class="project-card__slot-badge">modelo</span></h3>
+            <p class="project-card__desc">
+              Espaço reservado para uma landing page de conversão: rápida,
+              responsiva e orientada a um objetivo claro.
+            </p>
+            <ul class="project-card__tags">
+              <li>HTML</li><li>CSS</li><li>JavaScript</li>
+            </ul>
+            <p class="project-card__soon">🚧 Projeto a caminho — fica atento.</p>
+          </div>
+        </article>
+
+        <article class="project-card project-card--placeholder reveal">
+          <div class="project-card__image-wrap project-card__image-wrap--placeholder">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 17l6-6-6-6M12 19h8"></path></svg>
+            <span>Screenshot em breve</span>
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">Aplicação Web <span class="project-card__slot-badge">modelo</span></h3>
+            <p class="project-card__desc">
+              Espaço reservado para uma aplicação web com API própria,
+              autenticação de utilizadores e lógica de negócio real.
+            </p>
+            <ul class="project-card__tags">
+              <li>JavaScript</li><li>API</li>
+            </ul>
+            <p class="project-card__soon">🚧 Projeto a caminho — fica atento.</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===================== SERVIÇOS ===================== -->
+    <section class="section section--alt section--textured" id="servicos" aria-labelledby="servicos-title">
+      <div class="section__header reveal">
+        <p class="eyebrow">// 04_servicos</p>
+        <h2 class="section__title" id="servicos-title">Serviços</h2>
+        <p class="section__subtitle">Como posso ajudar o teu projeto a sair do papel.</p>
+      </div>
+
+      <ul class="services-grid">
+        <li class="service-card reveal">
+          <div class="service-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 5h18M3 12h18M3 19h18"></path></svg>
+          </div>
+          <h3>Desenvolvimento de Websites</h3>
+          <p>
+  Desenvolvimento de websites modernos, rápidos e responsivos, adaptados às
+  necessidades de cada cliente e preparados para proporcionar uma excelente
+  experiência em qualquer dispositivo.
+</p>
+        </li>
+        <li class="service-card reveal">
+          <div class="service-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M3 9h18M9 21V9"></path></svg>
+          </div>
+          <h3>Sistemas de Gestão</h3>
+          <p>
+  Criação de sistemas de gestão personalizados para facilitar a organização de
+  informações, automatizar processos e tornar o trabalho mais eficiente para
+  empresas e organizações.
+</p>
+        </li>
+        <li class="service-card reveal">
+          <div class="service-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"></path></svg>
+          </div>
+          <h3>Landing Pages</h3>
+         <p>
+  Desenvolvimento de landing pages com design moderno, carregamento rápido e
+  estrutura pensada para apresentar produtos, serviços ou campanhas de forma
+  clara e objetiva.
+</p>
+        </li>
+        <li class="service-card reveal">
+          <div class="service-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 8v8M8 12h8"></path><circle cx="12" cy="12" r="9"></circle></svg>
+          </div>
+          <h3>Manutenção de Sites</h3>
+          <p>
+  Correção de erros, atualização de funcionalidades, melhorias de desempenho e
+  manutenção contínua para garantir que o website permaneça seguro, rápido e
+  funcional.
+</p>
+        </li>
+        <li class="service-card reveal">
+          <div class="service-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 17l6-6-6-6M12 19h8"></path></svg>
+          </div>
+          <h3>Aplicações Web</h3>
+         <p>
+  Desenvolvimento de aplicações web focadas na resolução de problemas reais,
+  utilizando boas práticas de programação, arquitetura organizada e tecnologias
+  modernas.
+</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===================== COMO TRABALHO ===================== -->
+    <section class="section" id="processo" aria-labelledby="processo-title">
+      <div class="section__header reveal">
+        <p class="eyebrow">// 05_processo</p>
+        <h2 class="section__title" id="processo-title">Como Trabalho</h2>
+        <p class="section__subtitle">Um processo claro, do primeiro contacto ao lançamento.</p>
+      </div>
+
+      <ol class="process-grid">
+        <li class="process-step reveal">
+          <span class="process-step__number">01</span>
+          <div class="process-step__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg>
+          </div>
+          <h3>Descoberta</h3>
+          <p>Entendo o teu negócio, objetivos e público-alvo para definir o âmbito certo do projeto.</p>
+        </li>
+
+        <li class="process-step reveal">
+          <span class="process-step__number">02</span>
+          <div class="process-step__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"></path><path d="M18.5 2.5a2.12 2.12 0 013 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+          </div>
+          <h3>Design & Planeamento</h3>
+          <p>Estruturo a solução, escolho a stack certa e desenho a experiência antes de escrever código.</p>
+        </li>
+
+        <li class="process-step reveal">
+          <span class="process-step__number">03</span>
+          <div class="process-step__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+          </div>
+          <h3>Desenvolvimento</h3>
+          <p>Construo com código organizado, boas práticas e atualizações frequentes sobre o progresso.</p>
+        </li>
+
+        <li class="process-step reveal">
+          <span class="process-step__number">04</span>
+          <div class="process-step__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          </div>
+          <h3>Testes & QA</h3>
+          <p>Verifico responsividade, desempenho e casos-limite antes de qualquer entrega.</p>
+        </li>
+
+        <li class="process-step reveal">
+          <span class="process-step__number">05</span>
+          <div class="process-step__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 00-2.91-.09z"></path><path d="M12 15l-3-3a22 22 0 012-3.95A12.88 12.88 0 0122 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 01-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path></svg>
+          </div>
+          <h3>Lançamento & Suporte</h3>
+          <p>Publico o projeto e fico disponível para manutenção, ajustes e evoluções futuras.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ===================== ATIVIDADE NO GITHUB ===================== -->
+    <section class="section section--alt" id="atividade" aria-labelledby="atividade-title">
+      <div class="section__header reveal">
+        <p class="eyebrow">// 06_atividade</p>
+        <h2 class="section__title" id="atividade-title">Atividade no GitHub</h2>
+        <p class="section__subtitle">Dados reais, atualizados automaticamente a partir do meu perfil.</p>
+      </div>
+
+      <div class="github-stats">
+        <div class="github-stats__card reveal">
+          <img data-gh-stat="stats" alt="Estatísticas do GitHub de FranciscoFrontista" loading="lazy" width="495" height="195">
+        </div>
+        <div class="github-stats__card reveal">
+          <img data-gh-stat="streak" alt="Sequência de contribuições no GitHub" loading="lazy" width="495" height="195">
+        </div>
+        <div class="github-stats__card github-stats__card--wide reveal">
+          <img data-gh-stat="langs" alt="Linguagens mais usadas nos repositórios" loading="lazy" width="495" height="195">
+        </div>
+      </div>
+
+      <p class="github-stats__cta reveal">
+        <a href="https://github.com/FranciscoFrontista" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">Ver perfil completo no GitHub</a>
+      </p>
+    </section>
+
+    <!-- ===================== ESTATÍSTICAS ===================== -->
+    <section class="section stats" aria-label="Estatísticas">
+      <ul class="stats__grid">
+        <li class="stats__item reveal">
+          <span class="stats__number" data-target="20">0</span><span class="stats__plus">+</span>
+          <p>Projetos</p>
+        </li>
+        <li class="stats__item reveal">
+          <span class="stats__number" data-target="10">0</span><span class="stats__plus">+</span>
+          <p>Tecnologias</p>
+        </li>
+        <li class="stats__item reveal">
+          <span class="stats__number" data-target="1500">0</span><span class="stats__plus">+</span>
+          <p>Horas de estudo</p>
+        </li>
+        <li class="stats__item reveal">
+          <span class="stats__number" data-target="0">0</span>
+          <p>Clientes</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===================== FAQ ===================== -->
+    <section class="section section--alt" id="faq" aria-labelledby="faq-title">
+      <div class="section__header reveal">
+        <p class="eyebrow">// 07_faq</p>
+        <h2 class="section__title" id="faq-title">Perguntas Frequentes</h2>
+        <p class="section__subtitle">O que costumam perguntar antes de começar um projeto.</p>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item reveal">
+          <summary class="faq-item__question">
+            Como funciona o orçamento de um projeto?
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
+          </summary>
+          <p class="faq-item__answer">
+            Avalio os requisitos, o prazo e a complexidade de cada projeto para apresentar
+            um orçamento personalizado e sem custos escondidos, antes de começar qualquer trabalho.
+          </p>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary class="faq-item__question">
+            Trabalhas remotamente com clientes fora de Angola?
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
+          </summary>
+          <p class="faq-item__answer">
+            Sim. Trabalho remotamente com clientes de qualquer país, com comunicação
+            por email, WhatsApp ou chamada de vídeo ao longo do projeto.
+          </p>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary class="faq-item__question">
+            Quanto tempo demora um projeto?
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
+          </summary>
+          <p class="faq-item__answer">
+            Depende do âmbito — uma landing page pode demorar poucos dias, um sistema de
+            gestão mais completo demora mais. Defino um prazo estimado logo após perceber os requisitos.
+          </p>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary class="faq-item__question">
+            Ofereces manutenção depois do lançamento?
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
+          </summary>
+          <p class="faq-item__answer">
+            Sim. Fico disponível para correções, atualizações e evoluções depois do
+            projeto estar no ar — ver secção <a href="#servicos">Serviços</a>.
+          </p>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary class="faq-item__question">
+            Que tecnologias usas no desenvolvimento?
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
+          </summary>
+          <p class="faq-item__answer">
+            HTML, CSS e JavaScript no front-end, PHP/Laravel e MySQL no back-end —
+            ver detalhes na secção <a href="#tecnologias">Tecnologias</a>.
+          </p>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary class="faq-item__question">
+            Como começamos a trabalhar juntos?
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
+          </summary>
+          <p class="faq-item__answer">
+            Envia uma mensagem pelo <a href="#contacto">formulário de contacto</a>, email ou
+            WhatsApp a descrever a tua ideia — respondo com os próximos passos.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACTO ===================== -->
+    <section class="section section--textured" id="contacto" aria-labelledby="contacto-title">
+      <div class="section__header reveal">
+        <p class="eyebrow">// 08_contacto</p>
+        <h2 class="section__title" id="contacto-title">Vamos Trabalhar Juntos</h2>
+        <p class="section__subtitle">Tens um projeto em mente? Fala comigo.</p>
+      </div>
+
+      <div class="contact">
+        <form class="contact__form reveal" id="contactForm" novalidate>
+          <div class="form-field">
+            <label for="name">Nome</label>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+            <span class="form-error" id="nameError" role="alert"></span>
+          </div>
+
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+            <span class="form-error" id="emailError" role="alert"></span>
+          </div>
+
+          <div class="form-field">
+            <label for="message">Mensagem</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            <span class="form-error" id="messageError" role="alert"></span>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--full">
+            Enviar Mensagem
+          </button>
+
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+
+        <ul class="contact__info reveal">
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 0C5.5 0 .2 5.3.2 11.84c0 2.09.55 4.13 1.6 5.93L0 24l6.4-1.68a11.9 11.9 0 005.64 1.44h.01c6.54 0 11.84-5.3 11.84-11.84 0-3.16-1.23-6.13-3.47-8.36A11.77 11.77 0 0012.04 0z"></path></svg>
+            <a href="https://wa.me/244930572357" target="_blank" rel="noopener noreferrer">+244 930 572 357</a>
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M22 6l-10 7L2 6"></path></svg>
+            <a href="mailto:gasparito818@gmail.com">gasparito818@gmail.com</a>
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>Luanda, Angola</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <a href="#inicio" class="footer__logo">
+        <span class="navbar__logo-bracket">&lt;</span>FG<span class="navbar__logo-bracket">/&gt;</span>
+      </a>
+
+      <ul class="footer__links">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#processo">Processo</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+
+      <ul class="footer__socials">
+        <li>
+          <a href="https://github.com/FranciscoFrontista" target="_blank" rel="noopener noreferrer" class="footer__social-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.5 0 12.3c0 5.43 3.44 10.03 8.21 11.66.6.12.82-.27.82-.6v-2.1c-3.34.74-4.04-1.65-4.04-1.65-.55-1.43-1.34-1.81-1.34-1.81-1.1-.77.08-.75.08-.75 1.22.09 1.86 1.28 1.86 1.28 1.07 1.87 2.8 1.33 3.49 1.02.11-.79.42-1.33.76-1.64-2.67-.31-5.47-1.38-5.47-6.13 0-1.36.47-2.46 1.25-3.33-.13-.31-.54-1.57.12-3.28 0 0 1.02-.33 3.34 1.27a11.4 11.4 0 016.08 0c2.32-1.6 3.33-1.27 3.33-1.27.67 1.71.25 2.97.13 3.28.78.87 1.24 1.97 1.24 3.33 0 4.76-2.8 5.82-5.48 6.12.43.38.81 1.13.81 2.28v3.38c0 .33.22.72.83.6C20.57 22.32 24 17.73 24 12.3 24 5.5 18.63 0 12 0z"></path></svg>
+            <span>GitHub</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://linkedin.com/in/teu-usuario" target="_blank" rel="noopener noreferrer" class="footer__social-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 11.01-4.13 2.07 2.07 0 01-.01 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0z"></path></svg>
+            <span>LinkedIn</span>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:gasparito818@gmail.com" class="footer__social-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M22 6l-10 7L2 6"></path></svg>
+            <span>Email</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://wa.me/244930572357" target="_blank" rel="noopener noreferrer" class="footer__social-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 0C5.5 0 .2 5.3.2 11.84c0 2.09.55 4.13 1.6 5.93L0 24l6.4-1.68a11.9 11.9 0 005.64 1.44h.01c6.54 0 11.84-5.3 11.84-11.84 0-3.16-1.23-6.13-3.47-8.36A11.77 11.77 0 0012.04 0zm0 21.65a9.8 9.8 0 01-5-1.36l-.36-.21-3.8 1 1.01-3.7-.23-.38a9.8 9.8 0 01-1.5-5.16c0-5.42 4.41-9.83 9.84-9.83 2.63 0 5.1 1.02 6.96 2.88a9.78 9.78 0 012.88 6.96c0 5.42-4.41 9.8-9.8 9.8zm5.4-7.34c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.91-2.19-.24-.58-.48-.5-.66-.5-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.62.71.23 1.36.2 1.87.12.57-.08 1.75-.71 2-1.4.25-.69.25-1.28.17-1.4-.07-.12-.27-.2-.57-.34z"></path></svg>
+            <span>WhatsApp</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <p class="footer__copy">
+      © <span id="currentYear"></span> Francisco Gaspar. Todos os direitos reservados.
+    </p>
+  </footer>
+
+  <!-- ===================== STATUS BAR (elemento de assinatura) ===================== -->
+  <div class="statusbar" id="statusbar" aria-hidden="true">
+    <span class="statusbar__path">~/portfolio/<span id="statusbarSection">inicio</span>.js</span>
+    <span class="statusbar__dot"></span>
+    <span class="statusbar__status">disponível para projetos</span>
+    <button class="statusbar__top" id="backToTop" aria-label="Voltar ao topo" aria-hidden="false">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7"></path></svg>
+      topo
+    </button>
+  </div>
+
+  <!-- ===================== SCRIPTS ===================== -->
+  <script src="preloader.js" defer></script>
+  <script src="theme.js" defer></script>
+  <script src="typing.js" defer></script>
+  <script src="scroll.js" defer></script>
+  <script src="main.js" defer></script>
+  <script src="github-stats.js" defer></script>
+  <script src="interactions.js" defer></script>
+  <script src="cursor.js" defer></script>
+  <script src="text-scramble.js" defer></script>
+  <script src="hero-smoke.js" defer></script>
+  <script src="tech-bars.js" defer></script>
+</body>
+</html>
