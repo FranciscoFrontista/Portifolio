@@ -138,9 +138,10 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.2; font-weight
     url('assets/images/section-bg.jpg');
 }
 
-/* Teste: fundo texturado (assets/images/back.webp) nas secções essenciais.
+/* Fundo texturado (assets/images/back.webp) nas secções essenciais.
    background-attachment: fixed faz a imagem parecer uma única superfície
-   contínua por trás das secções, em vez de repetir/cortar por secção. */
+   contínua por trás das secções, em vez de repetir/cortar por secção
+   (no mobile, o responsive.css troca isto para "scroll"). */
 .section--textured {
   background-color: var(--bg-primary);
   background-image:
