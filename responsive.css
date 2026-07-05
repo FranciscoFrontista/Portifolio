@@ -134,3 +134,14 @@
 @media (min-width: 1440px) {
   .hero__inner { padding-top: calc(var(--navbar-height) + var(--space-2xl)); }
 }
+
+/* ---------- Fundo texturado em ecrãs táteis ----------
+   iOS Safari (e a maioria dos browsers mobile) não suporta bem
+   background-attachment: fixed — a imagem aparece distorcida/cortada
+   e pode "saltar" durante o scroll. Em ecrãs táteis/pequenos, usa-se
+   scroll normal em vez de fixed. */
+@media (hover: none) and (pointer: coarse), (max-width: 900px) {
+  .section--textured {
+    background-attachment: scroll;
+  }
+}

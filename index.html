@@ -27,8 +27,7 @@
   <link rel="icon" type="image/png" href="assets/icons/favicon.png">
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
   <link rel="canonical" href="https://franciscofrontista.github.io/Portifolio/">
-  <meta name="theme-color" content="#0B0E14" media="(prefers-color-scheme: dark)">
-  <meta name="theme-color" content="#FAF9F6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0B0E14">
 
   <!-- ===== Tipografia (Google Fonts) ===== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -63,16 +62,6 @@
   </script>
 </head>
 <body>
-
-  <!-- Evita "flash" de tema errado: o theme.js define o tema antes da pintura -->
-  <script>
-    (function () {
-      const savedTheme = localStorage.getItem('portfolio-theme');
-      const systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-      const theme = savedTheme || (systemPrefersLight ? 'light' : 'dark');
-      document.documentElement.setAttribute('data-theme', theme);
-    })();
-  </script>
 
   <!-- ===================== PRELOADER ===================== -->
   <noscript><style>.preloader { display: none !important; }</style></noscript>
@@ -134,17 +123,6 @@
       </ul>
 
       <div class="navbar__actions">
-        <!-- Botão de tema -->
-        <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema claro/escuro" aria-pressed="false">
-          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <circle cx="12" cy="12" r="4"></circle>
-            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
-          </svg>
-          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
-          </svg>
-        </button>
-
         <!-- Menu mobile (hambúrguer) -->
         <button class="navbar__burger" id="navBurger" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="navLinks">
           <span></span><span></span><span></span>
@@ -878,7 +856,6 @@
 
   <!-- ===================== SCRIPTS ===================== -->
   <script src="preloader.js" defer></script>
-  <script src="theme.js" defer></script>
   <script src="typing.js" defer></script>
   <script src="scroll.js" defer></script>
   <script src="main.js" defer></script>

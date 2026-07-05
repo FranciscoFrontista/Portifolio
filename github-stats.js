@@ -1,8 +1,6 @@
 /* ============================================================
    GITHUB-STATS.JS — Cartões de atividade do GitHub
-   - Gera os URLs do github-readme-stats/streak-stats com as cores
-     do tema atual (claro/escuro)
-   - Reage à alternância de tema via MutationObserver no <html data-theme>
+   - Gera os URLs do github-readme-stats/streak-stats com as cores do tema
    - Esconde o cartão se a imagem falhar a carregar (serviço em baixo)
    ============================================================ */
 
@@ -13,17 +11,14 @@
   const images = document.querySelectorAll('[data-gh-stat]');
   if (!images.length) return;
 
-  function currentColors() {
-    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-    return {
-      accent: isLight ? 'D7263D' : 'FF3B3B',
-      text: isLight ? '3A3A3A' : 'BEBEBE',
-      bg: '00000000' // transparente — o cartão já tem o próprio fundo
-    };
-  }
+  const COLORS = {
+    accent: 'FF3B3B',
+    text: 'BEBEBE',
+    bg: '00000000' // transparente — o cartão já tem o próprio fundo
+  };
 
   function buildUrl(type) {
-    const { accent, text, bg } = currentColors();
+    const { accent, text, bg } = COLORS;
 
     if (type === 'stats') {
       return `https://github-readme-stats.vercel.app/api?username=${USERNAME}&show_icons=true&hide_border=true&hide=contribs&bg_color=${bg}&title_color=${accent}&icon_color=${accent}&text_color=${text}`;
@@ -48,9 +43,4 @@
   }
 
   refresh();
-
-  new MutationObserver(refresh).observe(document.documentElement, {
-    attributes: true,
-    attributeFilter: ['data-theme']
-  });
 })();

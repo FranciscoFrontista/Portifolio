@@ -56,21 +56,6 @@
   --transition-base: 0.3s ease;
 }
 
-[data-theme="light"] {
-  --bg-primary: #FFFFFF;
-  --bg-secondary: #F4F4F4;
-  --bg-elevated: #FFFFFF;
-  --border-color: #E2E2E2;
-  --text-primary: #0A0A0A;
-  --text-secondary: #3A3A3A;
-  --text-muted: #6E6E6E;
-  --accent: #D7263D;
-  --accent-hover: #B01E30;
-  --accent-soft: #FBE4E6;
-  --shadow-color: rgba(10, 10, 10, 0.12);
-  --card-shadow: 0 1px 2px rgba(10, 10, 10, 0.045), 0 10px 24px -12px rgba(10, 10, 10, 0.16);
-}
-
 /* ---------- 2. RESET ---------- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -153,14 +138,14 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.2; font-weight
     url('assets/images/section-bg.jpg');
 }
 
-/* Teste: fundo texturado (assets/images/back.jpg) nas secções essenciais.
+/* Teste: fundo texturado (assets/images/back.webp) nas secções essenciais.
    background-attachment: fixed faz a imagem parecer uma única superfície
    contínua por trás das secções, em vez de repetir/cortar por secção. */
 .section--textured {
   background-color: var(--bg-primary);
   background-image:
     linear-gradient(color-mix(in srgb, var(--bg-primary) 70%, transparent), color-mix(in srgb, var(--bg-primary) 70%, transparent)),
-    url('assets/images/back.jpg');
+    url('assets/images/back.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -172,7 +157,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.2; font-weight
 #sobre.section--textured {
   background-image:
     linear-gradient(color-mix(in srgb, var(--bg-primary) 85%, transparent), color-mix(in srgb, var(--bg-primary) 85%, transparent)),
-    url('assets/images/back.jpg');
+    url('assets/images/back.webp');
 }
 
 .section__header {
@@ -342,25 +327,6 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.2; font-weight
   align-items: center;
   gap: var(--space-sm);
 }
-
-.theme-toggle {
-  display: grid;
-  place-items: center;
-  width: 38px; height: 38px;
-  border-radius: 50%;
-  border: 1px solid var(--border-color);
-  color: var(--text-secondary);
-  transition: border-color var(--transition-fast), color var(--transition-fast), transform var(--transition-base), background var(--transition-fast);
-}
-.theme-toggle:hover {
-  color: var(--accent);
-  border-color: var(--accent);
-  background: var(--accent-soft);
-  transform: rotate(-14deg);
-}
-.theme-toggle .icon-moon { display: none; }
-[data-theme="light"] .theme-toggle .icon-sun { display: none; }
-[data-theme="light"] .theme-toggle .icon-moon { display: block; }
 
 .navbar__burger {
   display: none;
@@ -1163,7 +1129,7 @@ html.is-loading { overflow: hidden; }
   background-color: var(--bg-primary);
   background-image:
     linear-gradient(color-mix(in srgb, var(--bg-primary) 90%, transparent), color-mix(in srgb, var(--bg-primary) 90%, transparent)),
-    url('assets/images/back.jpg');
+    url('assets/images/back.webp');
   background-size: cover;
   background-position: center;
   transition: opacity 0.6s ease, visibility 0.6s ease;

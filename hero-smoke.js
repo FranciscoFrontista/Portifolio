@@ -20,7 +20,6 @@
   let height = 0;
   let particles = [];
   let accentRgb = '255, 59, 59'; // fallback — atualizado a partir do CSS (--accent)
-  let isDark = true;
 
   function hexToRgb(hex) {
     const clean = hex.trim().replace('#', '');
@@ -34,7 +33,6 @@
     const value = getComputedStyle(document.documentElement).getPropertyValue('--accent');
     const rgb = hexToRgb(value);
     if (rgb) accentRgb = rgb;
-    isDark = document.documentElement.getAttribute('data-theme') !== 'light';
   }
 
   function resize() {
@@ -69,7 +67,7 @@
   function drawParticle(p, time) {
     const sway = Math.sin(time * p.swaySpeed + p.swayOffset) * p.swayAmp;
     const x = p.x + sway;
-    const a = p.alpha * (isDark ? 1 : 0.4);
+    const a = p.alpha;
     const gradient = ctx.createRadialGradient(x, p.y, 0, x, p.y, p.radius);
     gradient.addColorStop(0, `rgba(${accentRgb}, ${a})`);
     gradient.addColorStop(0.6, `rgba(${accentRgb}, ${a * 0.35})`);
@@ -82,13 +80,13 @@
 
   function drawStaticFrame() {
     ctx.clearRect(0, 0, width, height);
-    ctx.globalCompositeOperation = isDark ? 'lighter' : 'source-over';
+    ctx.globalCompositeOperation = 'lighter';
     particles.forEach((p) => drawParticle(p, 0));
   }
 
   function step(time) {
     ctx.clearRect(0, 0, width, height);
-    ctx.globalCompositeOperation = isDark ? 'lighter' : 'source-over';
+    ctx.globalCompositeOperation = 'lighter';
     particles.forEach((p) => {
       p.y -= p.speedY;
       p.x += p.driftX;
@@ -119,9 +117,4 @@
   }
 
   window.addEventListener('resize', onResize, { passive: true });
-
-  new MutationObserver(() => {
-    readTheme();
-    if (prefersReducedMotion) drawStaticFrame();
-  }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 })();
